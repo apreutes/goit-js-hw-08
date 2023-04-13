@@ -9,7 +9,7 @@ const KEY = 'videoplayer-current-time';
 player.on('timeupdate', throttle(onPlay, 1000));
 
 function onPlay(currentTime) {
-  localStorage.setItem(KEY, currentTime.seconds);
+  localStorage.setItem(KEY, Math.round(currentTime.seconds));
 }
 
 const start = localStorage.getItem(KEY);
